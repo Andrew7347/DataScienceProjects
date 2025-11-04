@@ -152,6 +152,9 @@ Firstly, Collecting time series data regarding the static holdings is imperative
 
 Below you will find all metrics collected from the individual portfolio composition and makeup.
 
+- Company name, ISIN/ticker, country, weight, sector
+- Historical prices, total returns PX_LAST, TOT_RETURN_INDEX_GROSS_DVDS, Yahoo/AlphaVantage
+
 (Insert Image)))))))))))))))))))))))))))))))
 
 Now it is imperative to collect a plethora of Macro and Micro metrics for comparison and relativistic mapping between our fund and various asset classes.
@@ -165,10 +168,27 @@ After collecting these data we can begin deriving various metrics utilising mode
 
 **Benchmark & factor data**
 
-- Benchmark prices (`Index` tickers)
+- Benchmark prices (`Index` tickers) 
 - Fama-French factor series (3-factor, 5-factor), momentum factor — downloadable (Kenneth French data)
 - Sector classification (GICS) — Bloomberg field `GICS_SECTOR_NAME`
 - Market cap, book/price, earnings, ROE (fundamentals) — Bloomberg fields: `CUR_MKT_CAP`, `PE_RATIO`, `PB_RATIO`, `RETURN_ON_EQUITY`
+- Risk Free rate M Treasury / SONIA / Fed Funds Effective Rate FRED or Bloomberg: USGG3M, SONIO/N Index
+- ADV, spread, turnover VOLUME, PX_BID, PX_ASK
 
 Here is data regarding Fama-French Factor series parameter values for discrete dates and time intervals. 
 mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html
+
+
+With static holdings, you can:
+
+Compute and visualise risk metrics (VaR, vol, correlations)
+Run mean–variance optimisation on current assets
+Estimate factor exposures & factor sensitivities
+Perform GARCH modelling on portfolio or benchmark returns
+Test for momentum, value, and quality biases
+Assess liquidity, market cap, and sector concentration
+Build a dashboard + memo reporting all of the above
+If you later get historical holdings, you can upgrade the analysis to include:
+Brinson attribution
+True rolling factor exposures
+Turnover & transaction cost analysis
