@@ -1,0 +1,5 @@
+Ensure I convert the Bloomberg files into their raw data counterparts to integrate within my aggregated data sheet list.
+
+After doing so establish the best practices formatting for the data, column/row names etc to ensure consistency
+and efficiency in importing data to python etc
+
