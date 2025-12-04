@@ -1,5 +1,5 @@
 # Portfolio Optimisation and Risk Modelling
-This project Involves analysing several realistic **Institituional** level Cross-Product Portfolios.
+This project Involves analysing **Institituional** level Cross-Product Portfolios subsets.
 It replicates the work of asset managers in large institutions such as Blackrock, Fidelity etc
 There will be applications of mean-variance optimisation, VaR calculations, stochastic simulation, and GARCH modelling — all implemented in Python.
 Alongside this...  Included within the preliminary analysis include 
@@ -15,7 +15,7 @@ The entire composition of this document is exclusively attributed to showcasing 
 -
 
 - Critical Thinking
-- Anstract Thinking
+- Abstract Thinking
 - Analaytical thinking
 - Problem solving etc.
 
@@ -49,9 +49,7 @@ Ensuring we sell products within the capital markets with the best returns, lowe
 
   Now that we understand the inherent needs of the business we can guide our data analysis to answer questions that EXPLICITLY and DIRECTLY tackle this problem.
 
-  The tools we will use (As listed at the beginning) include... (See the very start of this document).
-
-  Now that we know the inherent questions we need to answer to satisfy the needs of the business... We can begin our goal orientated data analysis.
+  Now that we know the inherent questions we need to answer to satisfy the needs of the business... We can begin our goal orientated data collection.
 
   ---------
 
@@ -70,7 +68,7 @@ We shall dive into this directly within this section while simultaneously collec
 The criteria I have chosen for choosing the portfolio comprises of the following…
 
 - Institutional Grade
-- Diverse (Equities, Bonds, Commodities)
+- Diverse (Equities, Commodities)
 - Publicly available information (quarterly reports, SEC filings, holdings etc)
 - Must be actively managed (Implies risk and return management required, replicating asset management roles)
 
@@ -82,63 +80,26 @@ The criteria I have chosen for choosing the portfolio comprises of the following
 
 - Extract Data from the Blackrock website
 - Extract Data Bloomberg Terminal
-- Extract data not from Blackrock
 
-  (Include Image))))))))))))))))))))))
+  <img width="1684" height="487" alt="image" src="https://github.com/user-attachments/assets/935a02e9-fa07-4d6f-90da-96760b7f463c" />
 
-I have successfully extracted A plethora of relevant data within the Blackrock website.
 
-To account for survivorship bias and proportionally decrease bias, I will confer with the data from alternative source (Bloomberg, Yahoo etc).
-
-(Include Images))))))))))))))))))
-
-I have extracted…
+I have successfully extracted A plethora of relevant data within the Blackrock website
 
 - Exposure Breakdowns (Asset Class, Sector, Region, Currency)
-- Fees
+- Fees (We axiomatically establish £0 fees).
 - “Key” characteristics (Relative to the website and definition of key).
-- Performance relative to indicators, Morningstar ranking etc
-- Total returns and benchmarks
 - Funds holdings, Market Value, Weight, Shares
 
 This was for the most recent quarter / filings.
 
-A problem was run into while carrying out this task.
-
-To execute effective time series, statistical and mathematical analysis we require consistent data about each quarters holding (as stated above). However the data for previous quarters on Bloomberg has induced issues such as displaying the quantity of shares within the portfolio.
-
-This creates a data cleaning and analysis problem, Attempts to fix this have been carried out using alternative sources, more recent holdings and there doesn’t seem to be a viable solution within this avenue.
-
-Therefore my next step of action is to manually derive the data above, How? By utilising formula to extract holdings, share prices etc to manually compute the above data.
-
-**I have established that excel can’t handle the huge array of data on the SEC filing.** 
-
-**Therefore my next course of action is to extract the data and clean it within Python,**
-
-**Afterwards this will be imported into Excel.** 
-
-Then we can focus on obtaining differeing sources of data.
-
 Once this is complete it is cruical I critically think regarding the data itself. what questions it can answer, what needs it can solve etc
+Afterall, Garbage In = Garbage Out
 
-Then we can begin our analysis or rather (Clean the data) and begin our analysis.
+This will outright lead to data cleaning and furthermore, analysis. 
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
-
-**Liontrust Global Smaller Companies Fund**
-
-I have accumulated a snapshot of the most recent holdings (2024).
-
-<img width="1104" height="864" alt="image" src="https://github.com/user-attachments/assets/7c4b8064-9d90-4ac8-9270-61585ff8c3c9" />
-
-The breakdown includes:
-
-Country	
-Company	
-Nominal (units)	
-Market Value (GBP)
-% of Net Assets
 
 The collection of static holdings suffice when utilising differential static based tools, aimfully to collect questions derived answers.
 Various postulations, criterions and axioms must be implemented to undertake alternative non-static based, continious time based analysis.
@@ -148,15 +109,19 @@ SEC13F and FCA holdings aren't obligated to disclose short sellings, historical 
 
 For this designated portfion of information assymetry and the inability to access institutional grade tools to aid in further analysis, and maximise information symmetry relative to our constarint, it is therefore advisable to utilise the static holdings as best we can..
 
+After executing analysis utilising static holdings, Divergence towards non-static formulation will begin.
+
 Firstly, Collecting time series data regarding the static holdings is imperative for our analysis.
 
 Below you will find all metrics collected from the individual portfolio composition and makeup.
 
 - Company name, ISIN/ticker, country, weight, sector
-- Historical prices, total returns PX_LAST, TOT_RETURN_INDEX_GROSS_DVDS, Yahoo/AlphaVantage
+- Historical prices, total returns(Calculcated), PX_LAST, TOT_RETURN_INDEX_GROSS_DVDS, P/E Ratio, P/B Ratio, dividend Yield, Forward dividends projection
+- Returns on investments, Shares outstanding, Trailing dividends...
+- YoY dividends growth (Calculcated).
 
-<img width="2560" height="1440" alt="image" src="https://github.com/user-attachments/assets/99560dec-c783-4f52-99f6-c02ec8504dfd" />
-<img width="2560" height="1440" alt="image" src="https://github.com/user-attachments/assets/4da331cb-94c7-4ca9-b3e7-5e07600bd209" />
+<img width="1692" height="519" alt="image" src="https://github.com/user-attachments/assets/ec16b6d5-8558-4b48-a058-e46700fa39f6" />
+<img width="1663" height="426" alt="image" src="https://github.com/user-attachments/assets/2e364fb0-8fdd-4843-bcba-17ec44e34adc" />
 
 
 Now it is imperative to collect a plethora of Macro and Micro metrics for comparison and relativistic mapping between our fund and various asset classes.
@@ -166,14 +131,15 @@ FTSE 100, MSCI World, S&P 500 etc
 A collection of indexes for relativistic comparison will be collected.. 
 CPI, interest rates, GDP growth, unemployment
 
-After collecting these data we can begin deriving various metrics utilising model for our analysis...
+<img width="1532" height="483" alt="image" src="https://github.com/user-attachments/assets/72c1aac7-1606-49ba-9ed8-2cdb9bfeeafa" />
+
+Now that we've collceted the data, we can begin deriving various metrics utilising model for our analysis...
 
 **Benchmark & factor data**
 
 - Benchmark prices (`Index` tickers) 
 - Fama-French factor series (3-factor, 5-factor), momentum factor — downloadable (Kenneth French data)
 - Sector classification (GICS) — Bloomberg field `GICS_SECTOR_NAME`
-- Market cap, book/price, earnings, ROE (fundamentals) — Bloomberg fields: `CUR_MKT_CAP`, `PE_RATIO`, `PB_RATIO`, `RETURN_ON_EQUITY`
 - Risk Free rate M Treasury / SONIA / Fed Funds Effective Rate FRED or Bloomberg: USGG3M, SONIO/N Index
 - ADV, spread, turnover VOLUME, PX_BID, PX_ASK
 
@@ -190,12 +156,15 @@ Perform GARCH modelling on portfolio or benchmark returns
 Test for momentum, value, and quality biases
 Assess liquidity, market cap, and sector concentration
 Build a dashboard + memo reporting all of the above
-If you later get historical holdings, you can upgrade the analysis to include:
+When we later obtain get historical holdings, We will upgrade the analysis to include:
 Brinson attribution
 True rolling factor exposures
 Turnover & transaction cost analysis
 
+These will be simulated on the assumption that any institutional analyst will have access to these.
+
 Commands situated below highlight efficiency utilisation concerning data extraction, superceding manual extraction which is time consuming..
+WE can also utilise the bloomberg spreadsheet builder to compute a des
 
 **last_price**
 =BDH("TICKER","PX_LAST","2022-11-07","2025-11-04","Dir=V","Dts=S","Fill=C","Sort=A")
@@ -216,4 +185,7 @@ Commands situated below highlight efficiency utilisation concerning data extract
 =BDH("Equity", "PX_TO_BOOK_RATIO", "01/07/2022", "04/07/2025", "PERIOD=Q", "FILL=PREV")
 
 
+Now that we have estbalished the Goals of our analysis, Portfolio, Data etc
+We can begin our analysis!
 
+(Refer to the notebooks to view these)!
